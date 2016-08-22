@@ -1,0 +1,34 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Madrid Calle 30 Status
+    </ion-title>
+    <ion-buttons start>
+      <button (click)="showInfo()">
+        <ion-icon name="information-circle"></ion-icon>
+      </button>
+      <button (click)="update()">
+        <ion-icon name="refresh-circle"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-list>
+    <ion-list-header>
+      Total cars in tunnel: {{total_cars_in_tunnel}}
+    </ion-list-header>
+    <ion-list-header>
+      Total cars in MC30: {{total_cars_in_mc30}}
+    </ion-list-header>
+    <ion-list-header>
+      Last update: {{last_update | date:'dd/MM/yyyy HH:mm'}}
+    </ion-list-header>
+    <ion-card *ngFor="let alert of alerts">
+      <ion-card-content>
+        {{alert}}
+      </ion-card-content>
+    </ion-card>
+  </ion-list>
+</ion-content>
